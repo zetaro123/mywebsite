@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Written by Zetaro(Arun) -->
+<html>
+<head>
+    <title>none</title>
+  <!--   <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}" type="text/css" />
+      <link rel="stylesheet" href="{% static 'home/css/bootstrap.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'home/style.css' %}" type="text/css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="{% static  'home/js/bootstrap.min.js' %}"></script> -->
+
+<link rel="stylesheet" href="{% static 'home/style.css' %}" type="text/css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+ <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+
+
+
+</head>
+
+<body class="">
+
+<div class="head_fixing">
+<div class="container"  align="center">
+
+  <font size="10" color="red">TECHSPARK</font>
+
+ </div>
+
+
+ <br />
+ <br />
+
+
+ <!-- Navbar -->
+
+
+<div class="container-fluid">
+<br>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand " href="http://127.0.0.1:8000/arun/">TechSPARK</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+          <br><br>
+
+
+      </ul>
+ 
+      <ul class="nav navbar-nav navbar container">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://127.0.0.1:8000/login/">LOGIN HERE</a></li>
+      </ul>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+</div>
+ 
+
+
+<br />
+<div align="center">
+  <strong><p>You should <a href="http://127.0.0.1:8000/login">login</a> if you have registered already.</p><strong>
+</div>
+
+<br />
+{% block body %}
+
+
+<div class="container">
+<h1 style="text-align: center;background-color:;width: 50%;margin: auto;padding-bottom: 2%">Registration Form</h1>
+<form action="{% url 'register' %}" method="post">
+{% csrf_token %}
+    
+          <div class="form-group" style="text-align: center; background-color: ; width: 20%;margin: auto;">
+
+                <label for="username" e="text-align: center;">Username</label>
+                <input type="text" placeholder="Enter UserName Here.." class="form-control" name="username" id="username">
+          </div>
+
+
+          <div class="form-group" style="text-align: center; background-color:; width: 50%;margin: auto">
+  
+            <label for="firstname" style="text-align: center;">First Name:</label><br>
+            <input type="text" class="form-control" name="first_name" id="firstname" style="width: 40%; text-align: center; margin: auto;" autofocus="true">
+          </div>
+ 
+          <div class="form-group" style="text-align: center; background-color:; width: 50%;margin: auto">
+  
+            <label for="lastname" style="text-align: center;">Last Name:</label><br>
+            <input type="text" class="form-control" name="last_name" id="lastname" style="width: 40%; text-align: center; margin: auto;" autofocus="true">
+          </div>
+
+
+          <div class="form-group" style="text-align: center;background-color: white;width: 50%;margin: auto;padding-bottom: 0%">
+            <label for="password" style="text-align: center;">Password:</label>
+            <input type="password" class="form-control" name="password" id="password" style="width: 40%; text-align: center;margin: auto;">
+          </div>
+
+          <div class="form-group" style="text-align: center;background-color: white;width: 50%;margin: auto;padding-bottom: 0%">
+            <label for="repassword" style="text-align: center;">Re Enter Password:</label>
+            <input type="password" class="form-control" name="repassword" id="repassword" style="width: 40%; text-align: center;margin: auto;">
+          </div>
+
+          <div class="form-group" style="text-align: center; background-color:; width: 50%;margin: auto">
+  
+            <label for="address" style="text-align: center;">Address:</label>
+            <input type="text" class="form-control" name="address" id="address" style="width: 40%; text-align: center; margin: auto;" autofocus="true">
+          </div>
+
+
+           <div class="form-group" style="text-align: center; background-color: ; width: 50%;margin: auto">
+  
+            <label for="phone" style="text-align: center;">Phone:</label>
+            <input type="text" class="form-control" name="phone" id="phone" style="width: 40%; text-align: center; margin: auto;" autofocus="true">
+          </div>
+
+
+          <div class="form-group" style="text-align: center; background-color:; width: 50%;margin: auto">
+            <label for="state" style="text-align: center;">state:</label>
+            <input type="text" class="form-control" name="state" id="state" style="width: 40%; text-align: center; margin: auto;" autofocus="true">
+          </div>
+          <div class="form-group" style="text-align: center; background-color:; width: 50%;margin: auto">
+            <label for="city" style="text-align: center;">city:</label>
+            <input type="text" class="form-control" name="city" id="city" style="width: 40%; text-align: center; margin: auto;" autofocus="true">
+          </div>
+
+
+          <div class="form-group" style="text-align: center; background-color:; width: 50%;margin: auto">
+            <label for="pincode" style="text-align: center;">Pincode:</label>
+            <input type="text" class="form-control" name="pincode" id="pincode" style="width: 40%; text-align: center; margin: auto;" autofocus="true">
+          </div>
+
+
+          <div class="form-group" style="text-align: center; background-color:; width: 50%;margin: auto">
+            <label for="email" style="text-align: center;">Email:</label>
+            <input type="text" class="form-control" name="email" id="email" style="width: 40%; text-align: center; margin: auto;" autofocus="true">
+          </div>
+<br>
+
+<div class="container" align="center">
+
+  <button type="submit" class="btn btn-success" align="center">Submit</button>
+
+</div>
+</form>
+
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
